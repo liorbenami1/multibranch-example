@@ -1,23 +1,19 @@
 pipeline {
-
-    agent {
-        docker 'levep79/jdk-alpine'
-    }
-    
+    agent none
     stages {
         stage('Example Build') {
+            agent { docker 'levep79/jdk-alpine:latest' }
             steps {
                 echo 'Hello World'
             }
         }
         stage('Example Deploy') {
-            when {
-                beforeInput true
-                branch 'master'
+            agent {
+                docker 'maven:3.5-alpine'
             }
-            input {
-                message "Deploy to production?"
-                id "simple-input"
+            when {
+                beforeAgent true
+                branch 'master'
             }
             steps {
                 echo 'Deploying'
