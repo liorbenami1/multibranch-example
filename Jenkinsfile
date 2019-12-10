@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Example Deploy') {
             agent {
-                docker 'maven:3-alpine'
+                docker 'registry.hub.docker.com/maven:3-alpine'
             }
             when {
                 beforeAgent true
