@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker 'registry.hub.docker.com/levep79/jdk-alpine'
+        docker 'levep79/jdk-alpine:latest'
     }
     stages {
         stage('Example Build') {
@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Example Deploy') {
             agent {
-                docker 'registry.hub.docker.com/maven:3-alpine'
+                docker 'maven:3-alpine'
             }
             when {
                 beforeAgent true
