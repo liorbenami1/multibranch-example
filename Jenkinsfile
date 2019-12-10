@@ -1,9 +1,8 @@
 pipeline {
-    agent {
-        docker 'levep79/jdk-alpine:latest'
-    }
+    agent none
     stages {
         stage('Example Build') {
+            agent { docker 'levep79/jdk-alpine:latest' }
             steps {
                 echo 'Hello World'
             }
