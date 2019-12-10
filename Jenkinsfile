@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker 'levep79/jdk-alpine'
+        docker 'registry.hub.docker.com/levep79/jdk-alpine'
     }
     stages {
         stage('Example Build') {
