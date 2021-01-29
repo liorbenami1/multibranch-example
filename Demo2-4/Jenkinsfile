@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World 3'
             }
         }
         stage('Example Deploy') {
